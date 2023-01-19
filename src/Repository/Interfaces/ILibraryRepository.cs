@@ -7,6 +7,8 @@ namespace src.Repository.Interfaces
 {
     public interface ILibraryRepository
     {
-        public void InsertBook( string Title, string Description, string Genre, int Pages);
+        public void InsertBook(string title, string description, string genre, int pages);
+        public List<Book> GetAllBooks();
+
     }
 }
