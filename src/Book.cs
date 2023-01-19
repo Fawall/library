@@ -1,6 +1,6 @@
 
 
-class Book {
+public class Book {
 
     private static int _nextId {get; set;}
     public int Id {get; set;}
