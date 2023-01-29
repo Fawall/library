@@ -2,10 +2,6 @@
 
 LibraryRepository libraryRepository = new LibraryRepository();
 
-
-
-
-
 System.Console.WriteLine("Welcome. Type what you want to do");
 while(true)
 {
@@ -57,10 +53,12 @@ while(true)
         case "2":
     
             var books = libraryRepository.GetAllBooks();
+
+            int numberOfBooks = books.Count;
+            System.Console.WriteLine($"Number of Books: {numberOfBooks}\n");
             foreach(var element in books)
-            {
-                int numberOfBooks = books.Count;
-                System.Console.WriteLine($"Number of Books: {numberOfBooks}\nID:{element.Id}, Title: {element.Title}, Description: {element.Description}, Pages: {element.Pages}");
+            {     
+                System.Console.WriteLine($"ID:{element.Id}, Title: {element.Title}, Description: {element.Description}, Pages: {element.Pages}");
             }
             
             break;
@@ -69,8 +67,7 @@ while(true)
 
             System.Console.WriteLine("Please inform the ID of Book that you want remove");
             int id = Convert.ToInt32(Console.ReadLine());
-            
-
+        
             libraryRepository.RemoveBook(id);
             break;
         
