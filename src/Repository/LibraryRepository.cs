@@ -15,7 +15,7 @@ namespace src.Repository
         public void InsertBook(string Title, string Description, string Genre, int Pages)
         {          
             _booksLibrary.Add(new Book(Title, Description, Genre, Pages));
-            System.Console.WriteLine($"Livro adicionado com sucesso:\n {Title} {Description}, {Genre}, {Pages} ");
+            System.Console.WriteLine($"Book successfully added:\n Title:{Title}, Description:{Description}, Genre:{Genre}, Pages:{Pages} ");
         }
 
         public List<Book> GetAllBooks()
@@ -25,13 +25,22 @@ namespace src.Repository
 
         public void RemoveBook(int id)
         {
-            _booksLibrary.Remove(_booksLibrary.Single(x => x.Id == id));
-
-            int newId = 1;
-            foreach(var book in _booksLibrary)
+            if(_booksLibrary.Any(x => x.Id == id) == true)
             {
-                book.UpdateId(newId++);
+                _booksLibrary.Remove(_booksLibrary.Single(x => x.Id == id));
+                int newId = 1;
+                foreach(var book in _booksLibrary)
+                {
+                    book.UpdateId(newId++);
+                }
+                
             }
+            else
+            {
+                System.Console.WriteLine("Please inform a valid id");                
+            }
+            
+
 
         }
 
