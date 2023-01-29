@@ -36,7 +36,7 @@ while(true)
         case "1":
             System.Console.WriteLine("Insert: Title of book, description, genre and number of pages");
             
-            System.Console.Write("Title ");
+            System.Console.Write("Title: ");
             string? title = Console.ReadLine();
                 
 
@@ -60,7 +60,7 @@ while(true)
             foreach(var element in books)
             {
                 int numberOfBooks = books.Count;
-                System.Console.WriteLine($"Number of Books: {numberOfBooks}\nTitle: {element.Title}, Description: {element.Description}, Pages: {element.Pages}");
+                System.Console.WriteLine($"Number of Books: {numberOfBooks}\nID:{element.Id}, Title: {element.Title}, Description: {element.Description}, Pages: {element.Pages}");
             }
             
             break;
