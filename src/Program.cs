@@ -9,7 +9,7 @@ LibraryRepository libraryRepository = new LibraryRepository();
 System.Console.WriteLine("Welcome. Type what you want to do");
 while(true)
 {
-
+    System.Console.WriteLine();
     System.Console.WriteLine("##################################\n"+
                             "#                               #\n"+
                             "#  1 - Insert a new book        #\n"+
@@ -38,6 +38,7 @@ while(true)
             
             System.Console.Write("Title ");
             string? title = Console.ReadLine();
+                
 
             System.Console.Write("Description: ");
             string? description = Console.ReadLine();
@@ -58,8 +59,8 @@ while(true)
             var books = libraryRepository.GetAllBooks();
             foreach(var element in books)
             {
-                
-                System.Console.WriteLine($"Title: {element.Title}, Description: {element.Description}, Pages: {element.Pages}");
+                int numberOfBooks = books.Count;
+                System.Console.WriteLine($"Number of Books: {numberOfBooks}\nTitle: {element.Title}, Description: {element.Description}, Pages: {element.Pages}");
             }
             
             break;
