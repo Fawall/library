@@ -9,6 +9,7 @@ namespace src.Repository.Interfaces
     {
         public void InsertBook(string title, string description, string genre, int pages);
         public List<Book> GetAllBooks();
+        public void RemoveBook(int id);
 
     }
 }

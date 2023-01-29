@@ -23,5 +23,17 @@ namespace src.Repository
             return GetBooks;
         }
 
+        public void RemoveBook(int id)
+        {
+            _booksLibrary.Remove(_booksLibrary.Single(x => x.Id == id));
+
+            int newId = 1;
+            foreach(var book in _booksLibrary)
+            {
+                book.UpdateId(newId++);
+            }
+
+        }
+
     }
 }
