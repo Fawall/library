@@ -19,5 +19,10 @@ public class Book {
         Pages = pages;
     }
 
+    public void UpdateId(int id)
+    {
+        this.Id = id++;
+    }
+
 
 }
