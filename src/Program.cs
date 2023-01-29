@@ -66,7 +66,12 @@ while(true)
             break;
         
         case "3":
-            throw new System.NotImplementedException();
+
+            System.Console.WriteLine("Please inform the ID of Book that you want remove");
+            int id = Convert.ToInt32(Console.ReadLine());
+            
+
+            libraryRepository.RemoveBook(id);
             break;
         
         case "4":
