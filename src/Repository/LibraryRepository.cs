@@ -12,10 +12,17 @@ namespace src.Repository
         private List<Book> _booksLibrary = new List<Book>();
         public List<Book> GetBooks {get => _booksLibrary;}
 
-        public void InsertBook(string Title, string Description, string Genre, int Pages)
-        {          
-            _booksLibrary.Add(new Book(Title, Description, Genre, Pages));
-            System.Console.WriteLine($"Book successfully added:\n Title:{Title}, Description:{Description}, Genre:{Genre}, Pages:{Pages} ");
+        public void InsertBook(string title, string description, string genre, int pages)
+        {   
+            if(string.IsNullOrEmpty(title) || string.IsNullOrEmpty(description) || string.IsNullOrEmpty(genre) || pages <= 0 || pages <= 0)
+            {
+                System.Console.WriteLine("Please inform valid values");
+            }
+            else
+            {
+                _booksLibrary.Add(new Book(title, description, genre, pages));
+                System.Console.WriteLine($"Book successfully added:\n Title:{title}, Description:{description}, Genre:{genre}, Pages:{pages} ");
+            }
         }
 
         public List<Book> GetAllBooks()
@@ -40,8 +47,6 @@ namespace src.Repository
                 System.Console.WriteLine("Please inform a valid id");                
             }
             
-
-
         }
 
     }
