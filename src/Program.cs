@@ -78,6 +78,11 @@ while(true)
         case "5":
             throw new System.NotImplementedException();
             break;
+        
+        case "6":
+            System.Console.WriteLine("Closing application");
+            libraryRepository.ExitApplication();
+            break;
 
 
         default:

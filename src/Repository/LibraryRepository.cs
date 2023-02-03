@@ -48,6 +48,10 @@ namespace src.Repository
             }
             
         }
+        public void ExitApplication()
+        {
+            System.Environment.Exit(0);
+        }
 
     }
 }
